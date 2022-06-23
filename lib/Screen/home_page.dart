@@ -1,4 +1,8 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+
+import 'ex.dart';
 
 class HomePage extends StatelessWidget {
   final int days = 30;
@@ -25,13 +29,22 @@ class HomePage extends StatelessWidget {
         mainAxisSpacing: 10,
         crossAxisCount: 3,
         children: <Widget>[
-          Container(
-            child: Icon(Icons.home),
+          ElevatedButton(
+            onPressed: () {
+              // Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MyWidget()),
+              );
+            },
+            child: Container(
+              child: Icon(Icons.home),
 
-            padding: const EdgeInsets.all(8),
-            color: Colors.teal[100],
+              padding: const EdgeInsets.all(8),
+              //color: Colors.teal[100],
 
-            // children: const Text("He'd have you all unravel at the"),
+              // children: const Text("He'd have you all unravel at the"),
+            ),
           ),
           Container(
             child: Icon(Icons.search),
@@ -108,8 +121,10 @@ class HomePage extends StatelessWidget {
           ),
           Container(
             child: Icon(Icons.search),
+
             padding: const EdgeInsets.all(8),
             color: Colors.teal[600],
+
             //child: const Text('Revolution, they...'),
           ),
           Container(
