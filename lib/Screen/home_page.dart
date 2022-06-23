@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 import 'ex.dart';
@@ -31,22 +29,16 @@ class HomePage extends StatelessWidget {
         children: <Widget>[
           ElevatedButton(
             onPressed: () {
-              // Navigator.pop(context);
+              Navigator.pop(context);
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const MyWidget()),
+                MaterialPageRoute(
+                  builder: (context) => MyWidgetPage(),
+                ),
               );
             },
-            child: Container(
-              child: Icon(Icons.home),
-
-              padding: const EdgeInsets.all(8),
-              //color: Colors.teal[100],
-
-              // children: const Text("He'd have you all unravel at the"),
-            ),
-          ),
-          Container(
+            child: Icon(Icons.home),
+          ),          Container(
             child: Icon(Icons.search),
             padding: const EdgeInsets.all(8),
             color: Colors.teal[200],
